@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
+import { faUserDoctor } from '@fortawesome/free-solid-svg-icons';
 
 const Sidebar = () => {
 
@@ -16,17 +17,21 @@ const Sidebar = () => {
     }, []);
 
     return (
-        <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion" style={{fontSize: "1.3rem"}}>
+        <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion" style={{fontSize: "1.5rem"}}>
             <div className="sb-sidenav-menu">
                 <div className="nav">
                     <div className="sb-sidenav-menu-heading">Core</div>
                     <Link className="nav-link" to="/admin/dashboard">
-                        <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                        <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"style={{fontSize: "2rem"}}></i></div>
                         Dashboard
                     </Link>
                     <Link className="nav-link" to="/admin/profile">
-                        <div className="sb-nav-link-icon"><FontAwesomeIcon icon={faUsers} /></div>
-                        Profile
+                        <div className="sb-nav-link-icon"><FontAwesomeIcon icon={faUsers} style={{fontSize: "2rem"}}/></div>
+                        Users
+                    </Link>
+                    <Link className="nav-link" to="/admin/profile">
+                        <div className="sb-nav-link-icon"><FontAwesomeIcon icon={faUserDoctor} style={{fontSize: "2rem"}}/></div>
+                        Doctors
                     </Link>
                     <div className="sb-sidenav-menu-heading">Interface</div>
                     <Link className="nav-link collapsed" to="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -53,8 +58,8 @@ const Sidebar = () => {
                             </Link>
                             <div className="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                 <nav className="sb-sidenav-menu-nested nav">
-                                    <Link className="nav-link" to="login.html">Login</Link>
-                                    <Link className="nav-link" to="register.html">Register</Link>
+                                    <Link className="nav-link" to="/login">Login</Link>
+                                    <Link className="nav-link" to="/register">Register</Link>
                                     <Link className="nav-link" to="password.html">Forgot Password</Link>
                                 </nav>
                             </div>
@@ -66,7 +71,6 @@ const Sidebar = () => {
                                 <nav className="sb-sidenav-menu-nested nav">
                                     <Link className="nav-link" to="401.html">401 Page</Link>
                                     <Link className="nav-link" to="404.html">404 Page</Link>
-                                    <Link className="nav-link" to="500.html">500 Page</Link>
                                 </nav>
                             </div>
                         </nav>
@@ -84,7 +88,7 @@ const Sidebar = () => {
             </div>
 
             <div className="sb-sidenav-footer">
-                <div className="small">Logged in as:</div>
+                <div className="small">Logged in Admin as:</div>
                {adminName}
             </div>
         </nav>

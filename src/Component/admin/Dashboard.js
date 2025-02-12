@@ -1,19 +1,39 @@
 import React from "react";
 
-function Dashboard() {
+import User from "../admin/User";
+import Doctor from "../admin/Doctor";
+import Patient from "../admin/Patient";
+
+
+function dashboard() {
   return (
-    <div className="container-fluid px-4">
+    < >
       <h1 className="mt-4">Dashboard</h1>
-      <ol className="breadcrumb mb-4">
-        <li className="breadcrumb-item active">Dashboard</li>
-      </ol>
-      <div className="card mb-4">
-        <div className="card-body">
-          Welcome to the Dashboard!
+      <div className="container">
+
+        <div className="row">
+          <div className="col-4">
+
+            <User />
+
+          </div>
+          <div className="col-4">
+
+            <Doctor />
+
+          </div>
+          <div className="col-4">
+
+            <Patient />
+
+          </div>
+
         </div>
+
       </div>
-    </div>
+
+    </>
   );
 }
 
-export default Dashboard;
+export default dashboard;

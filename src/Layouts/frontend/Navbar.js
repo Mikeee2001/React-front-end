@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import swal from "sweetalert";
+import Logo from '../../Image/logo.jpg';
 
 function Navbar() {
     const history = useHistory();
@@ -22,40 +23,49 @@ function Navbar() {
     const AuthButtons = !localStorage.getItem('auth_token') ? (
         <>
             <li className="nav-item">
-                <Link className="nav-link" to="/login">Login</Link>
+                <Link className="nav-link text-dark" to="/login">Login</Link>
             </li>
             <li className="nav-item">
-                <Link className="nav-link" to="/register">Register</Link>
+                <Link className="nav-link text-dark" to="/register">Register</Link>
             </li>
         </>
     ) : (
         <>
             <li className="nav-item">
-                <Link className="nav-link" to="/appointments">Appointments</Link>
+                <Link className="nav-link text-dark" to="/appointments">Appointments</Link>
             </li>
             <li className="nav-item">
-                <button type="button" onClick={logoutSubmit} className="nav-link btn btn-danger btn-sm text-white">Logout</button>
+                <button type="button" onClick={logoutSubmit} className="nav-link btn btn-danger btn-sm text-dark">Logout</button>
             </li>
         </>
     );
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top" style={{fontSize: "1.0rem"}}>
+        <nav className="navbar navbar-expand-lg navbar-light bg-white shadow sticky-top" style={{ fontSize: "1.3rem" }}>
             <div className="container">
-                <Link className="navbar-brand" to="/">Healthcare Appointment System</Link>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <Link className="navbar-brand text-dark" to="/">
+                    <img src={Logo} style={{ width: '50px', height: 'auto' }} className="logo" alt="Logo" />Healthcare Appointment System
+                </Link>
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/">Home</Link>
+                            <Link className="nav-link text-dark" to="/">Home</Link>
                         </li>
                         {AuthButtons}
                     </ul>
                 </div>
-
             </div>
         </nav>
     );
