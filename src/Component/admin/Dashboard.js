@@ -1,39 +1,26 @@
 import React from "react";
-
 import User from "../admin/User";
 import Doctor from "../admin/Doctor";
-import Patient from "../admin/Patient";
+import Patients from '../admin/Patient';
 
 
-function dashboard() {
+function Dashboard() {
   return (
-    < >
+    <div className="container-fluid px-4">
       <h1 className="mt-4">Dashboard</h1>
-      <div className="container">
-
-        <div className="row">
-          <div className="col-4">
-
-            <User />
-
-          </div>
-          <div className="col-4">
-
-            <Doctor />
-
-          </div>
-          <div className="col-4">
-
-            <Patient />
-
-          </div>
-
+      <div className="row">
+        <div className="col-xl-4 col-md-6 mb-4">
+          <User />
         </div>
-
+        <div className="col-xl-4 col-md-6 mb-4">
+          <Doctor />
+        </div>
+        <div className="col-xl-4 col-md-6 mb-4">
+          <Patients />
+        </div>
       </div>
-
-    </>
+    </div>
   );
 }
 
-export default dashboard;
+export default Dashboard;

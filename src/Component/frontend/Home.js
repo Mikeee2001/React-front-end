@@ -3,11 +3,14 @@ import React from "react";
 import Navbar from '../../Layouts/frontend/Navbar';
 
 
+
 function Home() {
   return (
     <div>
         <Navbar />
-        <h1>Home</h1>
+        <div>
+          <h1>THIS IS MY HOME</h1>
+        </div>
     </div>
   );
 }

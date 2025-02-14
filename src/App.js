@@ -1,11 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 
 //pages
 import AdminPrivateRoute from './AdminPrivateRoute';
 import Home from './Component/frontend/Home';
 import Login from './Component/frontend/Auth/Login';
 import Register from './Component/frontend/Auth/Register';
+import DoctorPrivateRoute from './DoctorPrivateRoute';
 
 // error page
 import Page403 from '../src/Component/errors/Page403';
@@ -51,6 +54,7 @@ function App() {
 
             {/* <Route path="/admin" name="Admin" render={(props) => <MasterLayout {...props} />} /> */}
             <AdminPrivateRoute path="/admin" name="Admin" />
+            <DoctorPrivateRoute path="/doctor" name="Doctor" />
 
         </Switch>
       </Router>

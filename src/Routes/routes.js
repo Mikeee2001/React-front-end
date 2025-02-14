@@ -1,5 +1,6 @@
 import Dashboard from '../../src/Component/admin/Dashboard';
 import Profile from '../../src/Component/admin/Profile';
+import Patients from '../Component/admin/Patient';
 import UserList from '../Component/admin/UserList';
 
 
@@ -10,6 +11,9 @@ const routes = [
   { path: '/admin/profile', exact: true, name: 'Profile', component: Profile },
   { path: '/admin/users', exact: true, name: 'User', component: UserList },
 
+
 ]
 
 export default routes;
+
+  

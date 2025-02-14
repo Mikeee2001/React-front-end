@@ -4,6 +4,7 @@ import axios from "axios";
 import swal from "sweetalert";
 import Logo from '../../Image/logo.jpg';
 
+
 function Navbar() {
     const history = useHistory();
 
@@ -32,7 +33,7 @@ function Navbar() {
     ) : (
         <>
             <li className="nav-item">
-                <Link className="nav-link text-dark" to="/appointments">Appointments</Link>
+                <Link className="nav-link text-dark" to="/appointments">My Appointment</Link>
             </li>
             <li className="nav-item">
                 <button type="button" onClick={logoutSubmit} className="nav-link btn btn-danger btn-sm text-dark">Logout</button>

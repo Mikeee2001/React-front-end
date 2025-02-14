@@ -6,8 +6,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Bootstrap JS
 import swal from "sweetalert";
 import "@fortawesome/fontawesome-free/css/all.min.css"; // FontAwesome CSS
 
-import Logo from '../../Image/logo.jpg';
-
 const Navbar = () => {
     const history = useHistory();
 
@@ -40,12 +38,12 @@ const Navbar = () => {
         </>
     ) : (
         <>
-            <li className="nav-item dropdown" style={{fontSize: "2rem"}}>
+            <li className="nav-item dropdown" style={{ fontSize: "2rem" }}>
                 <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i className="fas fa-user fa-fw"></i>
                 </a>
-                <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" style={{fontSize: "1rem"}}>
-                    <li><a className="dropdown-item" href="#!">My Profile</a></li>
+                <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" style={{ fontSize: "1rem" }}>
+                    <li><a className="dropdown-item" href="#!">My Patients</a></li>
                     <li><hr className="dropdown-divider" /></li>
                     <li>
                         <button type="button" onClick={logoutSubmit} className="dropdown-item btn btn-outline-danger btn-sm">
@@ -55,30 +53,30 @@ const Navbar = () => {
                 </ul>
             </li>
         </>
-
     );
 
     return (
-        <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark" style={{ height: "80px", fontSize: "1.3rem" }}>
-            <img src={Logo} style={{ width: '50px', height: 'auto'}}  className="logo" alt="Logo" />
-            <Link className="navbar-brand ps-3" to="/admin"style={{fontSize: "1.5rem"}}>Admin Dashboard</Link>
-            <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" to="#!"></button>
+        
+                <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark" style={{ height: "70px", fontSize: "1.3rem" }}>
+                    <Link className="navbar-brand ps-3" to="/doctor/dashboard" style={{ fontSize: "1.5rem" }}>Doctor Dashboard</Link>
+                    <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" to="#!"></button>
 
-            <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" style={{fontSize: "1.3rem"}} id="sidebarToggle" onClick={handleSidebarToggle}>
-                <i className="fas fa-bars"></i>
-            </button>
-            <div className="d-flex ms-auto align-items-center">
-                <form className="d-none d-md-inline-block form-inline me-3 my-2 my-md-0">
-                    <div className="input-group">
-                        <input className="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                        <button className="btn btn-primary" id="btnNavbarSearch" type="button"><i className="fas fa-search"></i></button>
+                    <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" style={{ fontSize: "1.3rem" }} id="sidebarToggle" onClick={handleSidebarToggle}>
+                        <i className="fas fa-bars"></i>
+                    </button>
+                    <div className="d-flex ms-auto align-items-center">
+                        <form className="d-none d-md-inline-block form-inline me-3 my-2 my-md-0">
+                            <div className="input-group">
+                                <input className="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                                <button className="btn btn-primary" id="btnNavbarSearch" type="button"><i className="fas fa-search"></i></button>
+                            </div>
+                        </form>
+                        <ul className="navbar-nav">
+                            {AuthButtons}
+                        </ul>
                     </div>
-                </form>
-                <ul className="navbar-nav">
-                    {AuthButtons}
-                </ul>
-            </div>
-        </nav>
+                </nav>
+          
     );
 }
 

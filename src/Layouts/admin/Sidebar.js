@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { faUserDoctor } from '@fortawesome/free-solid-svg-icons';
 
+import '../../styles/index.css';
+
 const Sidebar = () => {
 
     //set the login name to name of the admin
@@ -22,10 +24,10 @@ const Sidebar = () => {
                 <div className="nav">
                     <div className="sb-sidenav-menu-heading">Core</div>
                     <Link className="nav-link" to="/admin/dashboard">
-                        <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"style={{fontSize: "2rem"}}></i></div>
+                        <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt" style={{fontSize: "2rem"}}></i></div>
                         Dashboard
                     </Link>
-                    <Link className="nav-link" to="/admin/profile">
+                    <Link className="nav-link" to="/admin/users">
                         <div className="sb-nav-link-icon"><FontAwesomeIcon icon={faUsers} style={{fontSize: "2rem"}}/></div>
                         Users
                     </Link>

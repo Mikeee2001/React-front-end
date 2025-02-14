@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
+
 import { Modal, Button, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../../styles/index.css";
+
+import { Link } from "react-router-dom";
 
 function UserList() {
   const [users, setUsers] = useState([]);
@@ -63,10 +67,10 @@ function UserList() {
 
     const userPayload = isEditMode
       ? {
-          name: currentUser.name,
-          email: currentUser.email,
-          auth_role: currentUser.auth_role,
-        }
+        name: currentUser.name,
+        email: currentUser.email,
+        auth_role: currentUser.auth_role,
+      }
       : currentUser;
 
     axios[method](url, userPayload, {
@@ -99,7 +103,10 @@ function UserList() {
   return (
     <div className="container-fluid px-4">
       <h1 className="mt-4">User Details</h1>
-      <Button onClick={() => openModal()} className="mb-4">
+      <Link className="mb-4 btn btn-primary" style={{ marginRight: "10px" }} to="/admin/dashboard">
+        Back
+      </Link>
+      <Button onClick={() => openModal()} className="mb-4 btn btn-success mr-2">
         Add User
       </Button>
       <div className="row">
