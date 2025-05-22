@@ -27,21 +27,23 @@ function User() {
   }, []);
 
   return (
-    <div className="card bg-warning text-white mb-4">
-      <div className="card-body">
-        <FontAwesomeIcon icon={faUser} size="3x" className="float-left mr-4" />
+    <div className="card text-white mb-4 bg-custom text-center fw-bold">
+      <div className="overlay"></div> {/* Transparent overlay */}
+      <div className="card-body position-relative">
+        <FontAwesomeIcon icon={faUser} size="3x" className="d-block mx-auto mb-3" /> {/* Center icon */}
         <div className="h4">Users</div>
         <div className="h2">{userCount}</div>
       </div>
-      <div className="card-footer d-flex align-items-center justify-content-between">
-        <Link className="small text-white stretched-link" to="/admin/users">
+      <div className="card-footer d-flex align-items-center justify-content-center position-relative">
+        <Link className="small text-white stretched-link fw-bold" to="/admin/users">
           View Details
         </Link>
-        <div className="small text-white">
+        <div className="small text-white ms-2">
           <FontAwesomeIcon icon={faAngleRight} />
         </div>
       </div>
     </div>
+
   );
 }
 

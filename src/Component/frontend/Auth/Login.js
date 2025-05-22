@@ -27,6 +27,7 @@ function Login() {
 
         axios.get('/sanctum/csrf-cookie').then(response => {
             axios.post('api/login', data).then(res => {
+                
                 console.log(res.data);
 
                 if (res.data.status === 200) {

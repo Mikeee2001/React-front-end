@@ -181,4 +181,24 @@ background-position: right center , 17px center , 0px center;
 }
 
   
-  
+.bg-custom {
+    background: url('https://i.pinimg.com/736x/a5/8f/20/a58f20320f256c05f55659db2f4347ce.jpg') center/cover no-repeat;
+    position: relative;
+    border-radius: 0.25rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Transparency effect */
+    border-radius: 0.25rem;
+    z-index: 1;
+}
+
+.card-body, .card-footer {
+    position: relative;
+    z-index: 2; /* Keeps text above background */
+}

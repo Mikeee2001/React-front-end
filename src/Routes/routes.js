@@ -1,6 +1,5 @@
 import Dashboard from '../../src/Component/admin/Dashboard';
 import Profile from '../../src/Component/admin/Profile';
-import Patients from '../Component/admin/Patient';
 import UserList from '../Component/admin/UserList';
 
 
